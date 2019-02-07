@@ -26,11 +26,11 @@ app.use((req, res, next) =>{
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    pageTitle: 'Under construction'
-  });
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     pageTitle: 'Under construction'
+//   });
+// });
 
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express!</h1>')
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
-    pageTitle: 'About Page',
+    pageTitle: 'About Page'
   });
 });
 
@@ -50,6 +50,11 @@ app.get('/bad', (req, res) => {
   res.send({
     error: "bad request",
     message: "Unable to connect to Server"
+  });
+});
+app.get('/projects', (req, res) =>{
+  res.render('projects.hbs', {
+    pageTitle: 'Project Page'
   });
 });
 
